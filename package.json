@@ -21,7 +21,8 @@
     "react-draggable": "^4.3.1",
     "react-helmet": "^6.0.0",
     "three": "^0.115.0",
-    "three-css3drenderer": "^1.0.1"
+    "three-css3drenderer": "^1.0.1",
+    "three-window-resize": "^1.0.4"
   },
   "devDependencies": {
     "prettier": "2.0.5"
