@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Draggable from "react-draggable";
 
 import './style.less';
 
 const Screen = () => {
+  useEffect(() => {
+    console.log('test');
+  })
+
   return (
     <div className="screen">
       <Draggable bounds="parent">

@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./header";
-import Laptop from './Laptop';
+import LaptopRig from './LaptopRig';
 import "./layout.css"
 
 const Layout = ({ children }) => {
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
     <>
       <div>
         <main>
-          <Laptop/>
+          <LaptopRig/>
         </main>
       </div>
     </>
