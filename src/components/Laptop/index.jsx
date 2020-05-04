@@ -91,14 +91,14 @@ class Laptop extends React.Component {
 
     // Top Casing
     var topCaseBox = new THREE.BoxGeometry(vw(45), vw(35), vw(1));
-    var topCaseMaterial = new THREE.MeshLambertMaterial({color: 0xDCDCDC, shading: THREE.FlatShading});
+    var topCaseMaterial = new THREE.MeshLambertMaterial({color: 0xDDDDDD, shading: THREE.FlatShading});
     topCaseMaterial.flatShading = true;
     const topCase = new THREE.Mesh( topCaseBox, topCaseMaterial );
     topMesh.add(topCase);
 
     // Bottom Casing
     var bottomCaseBox = new THREE.BoxGeometry(vw(45), vw(1.2), vw(35));
-    var bottomCaseMaterial = new THREE.MeshLambertMaterial({color: 0xDCDCDC, shading: THREE.FlatShading});
+    var bottomCaseMaterial = new THREE.MeshLambertMaterial({color: 0xDDDDDD, shading: THREE.FlatShading});
     const bottomCase = new THREE.Mesh( bottomCaseBox, bottomCaseMaterial );
     bottomCaseMaterial.flatShading = true;
     bottomCase.position.y = vw(-18.1);
@@ -122,7 +122,7 @@ class Laptop extends React.Component {
     const planeGeometry = new THREE.BoxGeometry(vw(42), vw(32), 1);
     const planeMesh = new THREE.Mesh( planeGeometry, planeMaterial );
     this.planeMesh = planeMesh;
-    planeMesh.position.z = vw(.5);
+    planeMesh.position.z = vw(.6);
     topMesh.add(planeMesh);
 
     // Create a glRenderer
@@ -190,7 +190,6 @@ class Laptop extends React.Component {
     this.laptopMesh.rotation.y = degToRad(this.props.roty);
     this.laptopMesh.rotation.z = degToRad(this.props.rotz);
 
-    this.glScene.updateMatrixWorld();
     this.cssRenderer.render( this.glScene, this.camera );
     this.glRenderer.render( this.glScene, this.camera );
   }

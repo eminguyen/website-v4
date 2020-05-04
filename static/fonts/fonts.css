@@ -1,0 +1,21 @@
+@font-face {
+  font-family: AvenirNext;
+  font-weight: 400;
+  font-style: italic;
+  src: url("AvenirNextLTPro-It.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: AvenirNext;
+  font-weight: 400;
+  font-style: normal;
+  src: url("AvenirNextLTPro-Regular.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: AvenirNext;
+  font-weight: 700;
+  font-style: normal;
+  src: url("AvenirNextLTPro-Bold.otf") format("opentype");
+  font-display: swap;
+}

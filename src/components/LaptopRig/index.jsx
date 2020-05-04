@@ -22,7 +22,7 @@ let timeline;
 let percentage = 0;
 let touchStartY = 0;
 // container height - window height to limit the scroll at the top of the screen when we are at the bottom of the container
-let maxHeight = 10 * (document.documentElement.clientHeight || document.documentElement.offsetHeight) //- window.innerHeight;
+let maxHeight = 20 * (document.documentElement.clientHeight || document.documentElement.offsetHeight) //- window.innerHeight;
 
 function onWheel (e) {
     var evt = _event;
@@ -46,7 +46,7 @@ function scroll (e) {
   }
   percentage = lerp(percentage, - _event.y, .07);
   if(timeline) {
-    timeline.seek(percentage * (10000 / maxHeight));
+    timeline.seek(percentage * (20000 / maxHeight));
   }
 }
 
@@ -91,49 +91,43 @@ const LaptopRig = () => {
   const initTimeline = () => {
     timeline = anime.timeline({
       autoplay: false,
-      duration: 10000,
+      duration: 20000,
       easing: 'linear'
     });
     timeline.add({
       targets: position,
-      angle: -90,
+      angle: 0,
       x: 0,
       y: 0,
       z: 0,
       roty: 0,
       rotx: 0,
-      rotz: 0,
-      duration: 2500,
+      rotz: 0.1,
+      duration: 1500,
       update: updatePosition
     })
     .add({
       targets: position,
-      angle: -40,
-      x: 500,
-      roty: 100,
-      rotx: 0,
-      duration: 2500,
-      update: updatePosition
-    })
-    .add({
-      targets: position,
-      angle: -40,
-      x: 200,
-      roty: 30,
-      rotx: 0,
-      rotz: 0,
-      duration: 2500,
-      update: updatePosition
-    })
-    .add({
-      targets: position,
-      angle: -10,
-      x: 0,
-      z: 500,
+      angle: 0,
+      x: 0.1,
+      y: 0,
+      z: 0,
       roty: 0,
       rotx: 0,
       rotz: 0,
-      duration: 2500,
+      duration: 2000,
+      update: updatePosition
+    })
+    .add({
+      targets: position,
+      angle: 30,
+      x: 400,
+      y: 0,
+      z: 0,
+      roty: -20,
+      rotx: 50,
+      rotz: -20,
+      duration: 1000,
       update: updatePosition
     })
   }
