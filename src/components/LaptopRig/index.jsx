@@ -69,8 +69,10 @@ function onTouchMove (e) {
 }
 
 function init () {
-  maxHeight = 20 * (document.documentElement.clientHeight || document.documentElement.offsetHeight);
-  document.addEventListener('wheel', onWheel, { passive: false });
+  if (typeof window !== 'undefined') {
+    maxHeight = 20 * (document.documentElement.clientHeight || document.documentElement.offsetHeight);
+    document.addEventListener('wheel', onWheel, { passive: false });
+  }
 }
 
 const LaptopRig = () => {

@@ -64,8 +64,10 @@ let tempVector = new THREE.Vector3();
 class Laptop extends React.Component {
   constructor(props) {
     super(props);
-    this.element = document.createElement( 'div' );
-    ReactDOM.render(<Screen />, this.element );
+    if (typeof window !== 'undefined') {
+      this.element = document.createElement( 'div' );
+      ReactDOM.render(<Screen />, this.element );
+    }
   }
 
   componentDidMount() {
