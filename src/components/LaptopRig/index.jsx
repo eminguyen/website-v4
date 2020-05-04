@@ -22,7 +22,7 @@ let timeline;
 let percentage = 0;
 let touchStartY = 0;
 // container height - window height to limit the scroll at the top of the screen when we are at the bottom of the container
-let maxHeight = 20 * (document.documentElement.clientHeight || document.documentElement.offsetHeight) //- window.innerHeight;
+let maxHeight = 0; //- window.innerHeight;
 
 function onWheel (e) {
     var evt = _event;
@@ -69,6 +69,7 @@ function onTouchMove (e) {
 }
 
 function init () {
+  maxHeight = 20 * (document.documentElement.clientHeight || document.documentElement.offsetHeight);
   document.addEventListener('wheel', onWheel, { passive: false });
 }
 
