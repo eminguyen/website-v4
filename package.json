@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "animejs": "^3.2.0",
+    "core-js": "^3.6.5",
     "gatsby": "^2.21.0",
     "gatsby-image": "^2.4.0",
     "gatsby-plugin-less": "^3.2.0",
@@ -21,6 +22,7 @@
     "react-dom": "^16.12.0",
     "react-draggable": "^4.3.1",
     "react-helmet": "^6.0.0",
+    "react-scrollmagic": "^2.2.0",
     "three": "^0.115.0",
     "three-css3drenderer": "^1.0.1",
     "three-rounded-box": "^0.1.1",

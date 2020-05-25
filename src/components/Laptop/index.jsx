@@ -92,7 +92,7 @@ class Laptop extends React.Component {
     this.laptopMesh = laptopMesh;
 
     // Top Casing
-    var topCaseBox = new THREE.BoxGeometry(vw(45), vw(35), vw(1));
+    var topCaseBox = new THREE.BoxGeometry(vw(45), vw(35), vw(1.2));
     var topCaseMaterial = new THREE.MeshLambertMaterial({color: 0xDDDDDD, shading: THREE.FlatShading});
     topCaseMaterial.flatShading = true;
     const topCase = new THREE.Mesh( topCaseBox, topCaseMaterial );
@@ -121,10 +121,10 @@ class Laptop extends React.Component {
       blending: THREE.NoBlending,
       side: THREE.DoubleSide
     });
-    const planeGeometry = new THREE.BoxGeometry(vw(42), vw(32), 1);
+    const planeGeometry = new THREE.BoxGeometry(vw(42), vw(32), vw(1));
     const planeMesh = new THREE.Mesh( planeGeometry, planeMaterial );
     this.planeMesh = planeMesh;
-    planeMesh.position.z = vw(.6);
+    planeMesh.position.z = vw(.7);
     topMesh.add(planeMesh);
 
     // Create a glRenderer
@@ -207,7 +207,7 @@ class Laptop extends React.Component {
 
   render() {
     return (
-      <div ref={ref => (this.mount = ref)} />
+      <div className="laptop" ref={ref => (this.mount = ref)} />
     )
   }
 }
