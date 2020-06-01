@@ -1,10 +1,10 @@
 import React from 'react';
+import anime from "animejs";
 import Draggable from "react-draggable";
 
 import './style.less';
-import IEEE from '../Content/IEEE';
 
-const Window = () => {
+const Window = (props) => {
   return (
     <Draggable bounds="parent">
       <div className="window">
@@ -14,7 +14,7 @@ const Window = () => {
           <div className="circle"/>
         </div>
         <div className="content">
-          <IEEE />
+          {props.children}
         </div>
       </div>
    </Draggable>

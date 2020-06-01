@@ -37,7 +37,7 @@ class LaptopRig extends React.Component {
       angle: 0,
       x: 0,
       y: 0,
-      z: 0,
+      z: 100,
       roty: 0,
       rotx: 0,
       rotz: 0.1,
@@ -48,7 +48,7 @@ class LaptopRig extends React.Component {
       angle: 0,
       x: 0.1,
       y: 0,
-      z: 0,
+      z: 100,
       roty: 0,
       rotx: 0,
       rotz: 0,
@@ -56,11 +56,11 @@ class LaptopRig extends React.Component {
     })
     .add({
       targets: position,
-      angle: 10,
+      angle: 0,
       x: 400,
       y: 100,
       z: -300,
-      roty: 0,
+      roty: -20,
       rotx: -5,
       rotz: 0,
       duration: 2000
@@ -68,33 +68,33 @@ class LaptopRig extends React.Component {
     .add({
       targets: position,
       angle: 0,
-      x: -200,
-      y: 0,
-      z: 0,
-      roty: -400,
-      rotx: 40,
+      x: -400,
+      y: 100,
+      z: -300,
+      roty: 20,
+      rotx: -5,
       rotz: 0,
       duration: 2000
     })
     .add({
       targets: position,
       angle: 0,
-      x: 200,
-      y: 0,
-      z: 0,
-      roty: 0,
-      rotx: 0,
+      x: 400,
+      y: 100,
+      z: -300,
+      roty: -20,
+      rotx: -5,
       rotz: 0,
       duration: 2000
     })
     .add({
       targets: position,
       angle: 0,
-      x: -200,
-      y: 0,
-      z: 0,
-      roty: 0,
-      rotx: 0,
+      x: -400,
+      y: 100,
+      z: -300,
+      roty: 20,
+      rotx: -5,
       rotz: 0,
       duration: 2000
     })
@@ -119,17 +119,6 @@ class LaptopRig extends React.Component {
       rotx: 0,
       rotz: 0,
       duration: 5000
-    })
-    .add({
-      targets: position,
-      angle: 0,
-      x: 0,
-      y: 0,
-      z: 0,
-      roty: 0,
-      rotx: 0,
-      rotz: 0,
-      duration: 2000
     })
     .add({
       targets: position,
