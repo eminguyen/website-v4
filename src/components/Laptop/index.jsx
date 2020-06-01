@@ -5,7 +5,7 @@ import * as THREE from "three";
 import { CSS3DObject, CSS3DRenderer } from 'three-css3drenderer';
 import * as WindowResize from 'three-window-resize';
 
-import Screen from '../Screen';
+import Screen from '../../containers/Screen';
 import './style.less';
 
 
@@ -31,34 +31,34 @@ const degToRad = (deg) => {
 
 
 function makeElementObject(element) {
-    const obj = new THREE.Object3D;
-    element.style.opacity = 0.999;
-    var css3dObject = new CSS3DObject( element );
-    obj.css3dObject = css3dObject;
-    obj.add(css3dObject);
+  const obj = new THREE.Object3D;
+  element.style.opacity = 0.999;
+  var css3dObject = new CSS3DObject( element );
+  obj.css3dObject = css3dObject;
+  obj.add(css3dObject);
 
-    // make an invisible plane for the DOM element to chop
-    // clip a WebGL geometry with it.
+  // make an invisible plane for the DOM element to chop
+  // clip a WebGL geometry with it.
 
-    return obj
+  return obj;
 }
 
 function rotateAboutPoint(obj, point, axis, theta, pointIsWorld){
-    pointIsWorld = (pointIsWorld === undefined)? false : pointIsWorld;
+  pointIsWorld = (pointIsWorld === undefined)? false : pointIsWorld;
 
-    if(pointIsWorld){
-        obj.parent.localToWorld(obj.position); // compensate for world coordinate
-    }
+  if(pointIsWorld){
+      obj.parent.localToWorld(obj.position); // compensate for world coordinate
+  }
 
-    obj.position.sub(point); // remove the offset
-    obj.position.applyAxisAngle(axis, theta); // rotate the POSITION
-    obj.position.add(point); // re-add the offset
+  obj.position.sub(point); // remove the offset
+  obj.position.applyAxisAngle(axis, theta); // rotate the POSITION
+  obj.position.add(point); // re-add the offset
 
-    if(pointIsWorld){
-        obj.parent.worldToLocal(obj.position); // undo world coordinates compensation
-    }
+  if(pointIsWorld){
+      obj.parent.worldToLocal(obj.position); // undo world coordinates compensation
+  }
 
-    obj.rotateOnWorldAxis(axis, theta); // rotate the OBJECT
+  obj.rotateOnWorldAxis(axis, theta); // rotate the OBJECT
 }
 let tempVector = new THREE.Vector3();
 class Laptop extends React.Component {
@@ -66,7 +66,7 @@ class Laptop extends React.Component {
     super(props);
     if (typeof window !== 'undefined') {
       this.element = document.createElement( 'div' );
-      ReactDOM.render(<Screen />, this.element );
+      ReactDOM.render(<Screen store={props.store}/>, this.element );
     }
   }
 
@@ -121,7 +121,7 @@ class Laptop extends React.Component {
       blending: THREE.NoBlending,
       side: THREE.DoubleSide
     });
-    const planeGeometry = new THREE.BoxGeometry(vw(42), vw(32), vw(1));
+    const planeGeometry = new THREE.BoxGeometry(vw(41), vw(31), vw(.9));
     const planeMesh = new THREE.Mesh( planeGeometry, planeMaterial );
     this.planeMesh = planeMesh;
     planeMesh.position.z = vw(.7);
